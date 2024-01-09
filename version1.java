@@ -92,7 +92,7 @@ public class version1 {
         private JPanel homePage() {
         JPanel panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(100, 100, 50, 100));
-        panel.setBackground(Color.decode("#f7f1e6"));
+        panel.setBackground(Color.decode("#CCCCFF"));
 
         panel.setLayout(new GridBagLayout());
         GridBagConstraints constraints = new GridBagConstraints();
@@ -100,17 +100,23 @@ public class version1 {
         constraints.gridy = 0;
         constraints.gridwidth = 2;
         constraints.anchor = GridBagConstraints.CENTER;
-        constraints.insets = new Insets(150, 150, 50, 150);
-
-        JLabel titleLabel = createTitleLabel("Photo Editor");
-        panel.add(titleLabel, constraints);
-
-        constraints.gridy = 1;
         constraints.insets = new Insets(10, 0, 10, 0);
 
+        JLabel titleLabel = createTitleLabel("Photo Editor");
+        //JLabel groupLabel = createTitleLabel("Syntax_Error");
+        panel.add(titleLabel, constraints);
+        //panel.add(groupLabel, constraints);
+
+        constraints.gridy = 1;
+        
+        JLabel groupLabel = createTitleLabel("Syntax_Error");
+        panel.add(groupLabel, constraints);
+        
+        constraints.gridy = 1;
+
         JButton importButton = createButton("Import Image");
-        importButton.setPreferredSize(new Dimension(200, 50));
-        importButton.setBackground(Color.decode("#fae6c0"));
+        importButton.setPreferredSize(new Dimension(120, 40));
+        importButton.setBackground(Color.decode("#9999FF"));
         importButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JFileChooser filechooser = new JFileChooser();
@@ -169,7 +175,7 @@ public class version1 {
         
         JLabel label = new JLabel(text);
         label.setFont(new Font("Poppins", Font.BOLD, 48));
-        label.setForeground(Color.decode("#ff7733"));
+        label.setForeground(Color.decode("#FF3399"));
         return label;
         
     }
@@ -179,14 +185,14 @@ public class version1 {
         JButton button = new JButton(text);
         button.setFont(new Font("Poppins", Font.PLAIN, 13));
         button.setForeground(Color.BLACK);
-        Color initialBackgroundColor = Color.decode("#fae6c0");
+        Color initialBackgroundColor = Color.decode("#FFCCE5");
 
         button.addMouseListener(new MouseAdapter() {
             
             @Override
             public void mouseEntered(MouseEvent e) {
                 
-                button.setBackground(Color.decode("#f7d38f"));
+                button.setBackground(Color.decode("#FFCCE5"));
                 button.setOpaque(true);
                 button.requestFocus();
                 
@@ -251,7 +257,7 @@ public class version1 {
 
         JButton cropButton = createButton("Crop");
         cropButton.setPreferredSize(new Dimension(120, 40));
-        cropButton.setBackground(Color.decode("#fae6c0"));
+        cropButton.setBackground(Color.decode("#FFFFCC"));
         cropButton.addActionListener(new ActionListener() {
             
             @Override
@@ -265,7 +271,7 @@ public class version1 {
         
         JButton rotateButton = createButton("Rotate");
         rotateButton.setPreferredSize(new Dimension(120, 40));
-        rotateButton.setBackground(Color.decode("#fae6c0"));
+        rotateButton.setBackground(Color.decode("#E5FFCC"));
         rotateButton.addActionListener(new ActionListener() {
             
             @Override
@@ -278,7 +284,7 @@ public class version1 {
         
         JButton blurButton = createButton("Blur");
         blurButton.setPreferredSize(new Dimension(120, 40));
-        blurButton.setBackground(Color.decode("#fae6c0"));
+        blurButton.setBackground(Color.decode("#CCFFE5"));
         blurButton.addActionListener(new ActionListener() {
             
             @Override
@@ -311,13 +317,15 @@ public class version1 {
                     imageDisplayLabel.setIcon(blurredIcon);
                     
                 }
+                
+                blurIntensitySlider.setValue(0);
             }
         }
     });
         
         JButton brightnessButton = createButton("Brightness");
         brightnessButton.setPreferredSize(new Dimension(120, 40));
-        brightnessButton.setBackground(Color.decode("#fae6c0"));
+        brightnessButton.setBackground(Color.decode("#CCFFFF"));
         brightnessButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -359,7 +367,7 @@ public class version1 {
         
         JButton monochromeButton = createButton("Monochrome");
         monochromeButton.setPreferredSize(new Dimension(120, 40));
-        monochromeButton.setBackground(Color.decode("#fae6c0"));
+        monochromeButton.setBackground(Color.decode("#CCE5FF"));
         monochromeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -391,7 +399,7 @@ public class version1 {
 
         JButton resizeButton = createButton("Resize");
         resizeButton.setPreferredSize(new Dimension(120, 40));
-        resizeButton.setBackground(Color.decode("#fae6c0"));
+        resizeButton.setBackground(Color.decode("#CCCCFF"));
         resizeButton.addActionListener(new ActionListener() {
            
             @Override
@@ -447,7 +455,7 @@ public class version1 {
 
         JButton drawButton = createButton("Draw");
         drawButton.setPreferredSize(new Dimension(120, 40));
-        drawButton.setBackground(Color.decode("#fae6c0"));
+        drawButton.setBackground(Color.decode("#E5CCFF"));
         drawButton.addActionListener(new ActionListener() {
             
             @Override
@@ -528,7 +536,7 @@ public class version1 {
         
         JButton resetButton = createButton("Reset");
         resetButton.setPreferredSize(new Dimension(120, 40));
-        resetButton.setBackground(Color.decode("#fae6c0"));
+        resetButton.setBackground(Color.decode("#FFCCFF"));
         resetButton.addActionListener(new ActionListener() {
             
             @Override
@@ -551,7 +559,7 @@ public class version1 {
 
         JButton saveButton = createButton("Save");
         saveButton.setPreferredSize(new Dimension(120, 40));
-        saveButton.setBackground(Color.decode("#fae6c0"));
+        saveButton.setBackground(Color.decode("#FFCCE5"));
         saveButton.addActionListener(new ActionListener() {
             
             @Override
@@ -565,7 +573,7 @@ public class version1 {
         
         JButton undoButton = createButton("Undo");
         undoButton.setPreferredSize(new Dimension(120, 40));
-        undoButton.setBackground(Color.decode("#fae6c0"));
+        undoButton.setBackground(Color.decode("#FFCCCC"));
         undoButton.addActionListener(new ActionListener() {
             
             @Override
